@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id = "control-container">
+            <select id = "categorySelect">
+                <option value = "">Select Category</option>
+                <option value = "movies">Movies</option>
+                <option value = "tvshows">TV Shows</option>
+                <option value = "games">Games</option>
+                <option value = "asian_dramas">Asian Dramas</option>
+            </select>
+            <select id = "ambienceSelect">
+                <option value = "">Select Category</option>
+            </select>
+
+            <button id="playButton">Play Music</button>
+            <button id="pauseButton" disabled>Pause Music</button>
+        </div>
+        <h1 id="countdown">25:00</h1>
+        <div id="timer-settings">
+            <label>Work (minutes): <input type="number" id="work-duration" value="25" min="1"></label>
+            <label>Break (minutes): <input type="number" id="break-duration" value="5" min="1"></label>
+            <button id="apply-settings">Apply</button>
+        </div>
+        <div id="controls">
+            <button id="start-btn">Start Timer</button>
+            <button id="pause-btn">Pause Timer</button>
+            <button id="reset-btn">Reset Timer</button>
+        </div>
+        <div id="session-counter">Sessions completed: 0</div>
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+    </div>
+
+    <div id="tasks-container">
+        <h2>Your Tasks</h2>
+        <div id="task-input-container">
+            <input type="text" id="task-input" placeholder="Add a new task...">
+            <button id="add-task-btn">Add</button>
+        </div>
+        <ul id="task-list"></ul>
+    </div>
+    
+    <button id = "recommendationBtn" style = "display: none;" onclick="getRandomRecommendation()">Get a Recommendation!</button>
+
+    <div id="RecommendationModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Recommended for you:</h2>
+            <p id="recommendationText"></p>
+        </div>
+    </div>
+
+    <script src="pomodoro.js"></script>
+</body>
+</html>
